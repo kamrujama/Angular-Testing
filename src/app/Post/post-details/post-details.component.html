@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row mt-5" *ngIf="post; else noPost">
+    <div class="col-sm-3">
+      <a class="btn btn-primary lead title-link">
+        {{post.title}}
+      </a>
+    </div>
+    <div class="col-sm-3">{{post.body}}</div>
+    <div class="col-sm-3">
+      <button class="btn btn-danger lead" (click)="deletePost()">Delete Post</button>
+    </div>
+  </div>
+  <ng-template #noPost>
+    <div class="row text-center mt-5">
+      <h2>No Post Available</h2>
+    </div>
+  </ng-template>
+</div>

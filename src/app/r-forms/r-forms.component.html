@@ -1,0 +1,31 @@
+<div class="container mt-5">
+  <!-- <form #f (ngSubmit)="onSubmit(f)">  where f will contain the form object-->
+    <!-- while below one will give us control to access data using viewChild -->
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="Username" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="Username" name="username" required ngModel>
+    </div>
+    <div class="mb-3">
+      <label for="Email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="Email" name="email" required ngModel #email="ngModel">
+      <div id="emailHelp" class="form-text" *ngIf="email.invalid && email.touched">Please enter a valid email</div>
+    </div>
+    <!-- <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" required ngModel>
+    </div> -->
+    <div class="mb-3">
+      <select class="form-select" name="gender" ngModel="male">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">About</label>
+      <textarea class="form-control" name="about" id="" cols="30" rows="10" ngModel></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+  </form>
+
+</div>

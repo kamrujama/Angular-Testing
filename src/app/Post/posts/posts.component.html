@@ -1,0 +1,3 @@
+<div class="container" *ngFor="let data of post" class="post">
+  <app-post-details [post]="data" (delete)="deletePost(data)"></app-post-details>
+</div>
